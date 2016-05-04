@@ -47,9 +47,9 @@ def distort_image(pathname, filename):
     blur2 = cv2.blur(im,(30,30))
     blur3 = cv2.blur(im,(50,50))
     
-    cv2.imwrite(pathname + "_b1.png", blur1)
-    cv2.imwrite(pathname + "_b2.png", blur2)
-    cv2.imwrite(pathname + "_b3.png", blur3)
+    #cv2.imwrite(pathname + "_b1.png", blur1)
+    #cv2.imwrite(pathname + "_b2.png", blur2)
+    #cv2.imwrite(pathname + "_b3.png", blur3)
     
     #color
     hsv = cv2.cvtColor(im, cv2.COLOR_RGB2HSV)
@@ -59,15 +59,15 @@ def distort_image(pathname, filename):
     h3 = change_hsv(0, hsv, 20)
     h4 = change_hsv(0, hsv, 70)
     
-    cv2.imwrite(pathname + "_h1.png", h1)
-    cv2.imwrite(pathname + "_h2.png", h2)
-    cv2.imwrite(pathname + "_h3.png", h3)
-    cv2.imwrite(pathname + "_h4.png", h4)
+    #cv2.imwrite(pathname + "_h1.png", h1)
+    #cv2.imwrite(pathname + "_h2.png", h2)
+    #cv2.imwrite(pathname + "_h3.png", h3)
+    #cv2.imwrite(pathname + "_h4.png", h4)
     
     #warp
-    w1 = warp(30, 30, im)
-    w2 = warp(20, 20, im)
-    w3 = warp(10, 10, im)
+    w1 = warp(30.0, 30.0, im)
+    w2 = warp(20.0, 20.0, im)
+    w3 = warp(10.0, 10.0, im)
     
     cv2.imwrite(pathname + "_w1.png",  w1)
     cv2.imwrite(pathname + "_w2.png",  w2)
@@ -78,6 +78,6 @@ def distort_image(pathname, filename):
     n2 = noise(0, 70, 1, im)
     n3 = noise(0, 120, 1, im)
     
-    cv2.imwrite(pathname + "_n1.png", n1)
-    cv2.imwrite(pathname + "_n2.png", n2)
-    cv2.imwrite(pathname + "_n3.png", n3)
+    #cv2.imwrite(pathname + "_n1.png", n1)
+    #cv2.imwrite(pathname + "_n2.png", n2)
+    #cv2.imwrite(pathname + "_n3.png", n3)
