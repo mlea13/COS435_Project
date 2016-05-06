@@ -33,7 +33,7 @@ def predict(input_name, input_file, output_file, ext):
     
     # Make classifier.
     classifier = caffe.Classifier(model_def, pretrained_model,
-            image_dims=image_dims, mean=mean,
+            image_dims=image_dims,
             raw_scale=raw_scale,
             channel_swap=channel_swap)
 
