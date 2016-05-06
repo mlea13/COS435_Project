@@ -13,7 +13,7 @@ import time
 import caffe
 
 
-def predict(input_name, input_file, output_file):
+def predict(input_name, input_file, output_file, ext):
     pycaffe_dir = "/home/cos326/caffe/python/"
 
     model_def = "/home/cos326/COS435_Project/alex_net/deploy.prototxt"
@@ -26,16 +26,15 @@ def predict(input_name, input_file, output_file):
     
     raw_scale = 255.0
     channel_swap = [2,1,0]
-    ext = 'jpg'
     image_dims = [256, 256]
-    input_scale = 1.0
+    #input_scale = 1.0
     
     caffe.set_mode_cpu()
     
     # Make classifier.
     classifier = caffe.Classifier(model_def, pretrained_model,
             image_dims=image_dims, mean=mean,
-            input_scale=input_scale, raw_scale=raw_scale,
+            raw_scale=raw_scale,
             channel_swap=channel_swap)
 
     # Load numpy array (.npy), directory glob (*.jpg), or image file.
