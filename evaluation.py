@@ -4,9 +4,9 @@ import math
 import os
 
 
-os.chdir('/Users/samhita/Documents/0Princeton/1_SophomoreYear/COS435/FinalProject/Results/Places/Yard/')
+os.chdir('/Users/samhita/Documents/0Princeton/1_SophomoreYear/COS435/COS435_Project/Results/NeuralNet/sand_bar/')
 
-test = pandas.read_csv('503627556_0e3b3b1498_w3_results.csv', header=None)
+test = pandas.read_csv('2778861334_238fed8cd_w3_results.csv', header=None)
 
 pool_size = 35
 pool_relDocs = 22
