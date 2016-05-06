@@ -59,5 +59,5 @@ def predict(input_name, input_file, output_file):
     output_file.write("\n")
     output_file.write(top_3_labels)
     output_file.write("\n")
-    output_file.write(predictions[0][top_3])
-    output_file.write("\n")
+    #output_file.write(predictions[0][top_3])
+    #output_file.write("\n")
