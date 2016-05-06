@@ -13,13 +13,13 @@ import time
 import caffe
 
 
-def predict(input_file, output_file):
+def predict(input_name, input_file, output_file):
     pycaffe_dir = "/home/cos326/caffe/python/"
 
-    #model_def = "/home/cos326/COS435_Project/alex_net/deploy.prototxt"
-    #pretrained_model = "/home/cos326/COS435_Project/alex_net/bvlc_alexnet.caffemodel"
-    model_def = "/home/cos326/COS435_Project/google_net/deploy.prototxt"
-    pretrained_model = "/home/cos326/COS435_Project/google_net/bvlc_googlenet.caffemodel"
+    model_def = "/home/cos326/COS435_Project/alex_net/deploy.prototxt"
+    pretrained_model = "/home/cos326/COS435_Project/alex_net/bvlc_alexnet.caffemodel"
+    #model_def = "/home/cos326/COS435_Project/google_net/deploy.prototxt"
+    #pretrained_model = "/home/cos326/COS435_Project/google_net/bvlc_googlenet.caffemodel"
     
     mean = np.load("/home/cos326/caffe/python/caffe/imagenet/ilsvrc_2012_mean.npy")
     labels = np.loadtxt("/home/cos326/caffe/data/ilsvrc12/synset_words.txt", str, delimiter='\t')
@@ -52,7 +52,12 @@ def predict(input_file, output_file):
     #print("Saving results into %s" % output_file)
     #np.save(output_file, predictions)
     top_3 = predictions[0].argsort()[-3:][::-1]
-    print top_3
     top_3_labels = labels[top_3]
-    print top_3_labels
-    print predictions[0][top_3]
+
+    output_file.write("########\n")
+    output_file.write(input_name)
+    output_file.write("\n")
+    output_file.write(top_3_labels)
+    output_file.write("\n")
+    output_file.write(predictions[0][top_3])
+    output_file.write("\n")
