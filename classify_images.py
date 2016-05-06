@@ -14,9 +14,7 @@ for top_dir in top_dirs:
     
     #classify each image
     for im_file in imgs:
-        im = cv2.imread(im_file)
-        #im_size = cv2.resize(im, (256, 256))
-        alexnet.predict(im_file, im, f1, "jpg")
+        alexnet.predict(im_file, f1, "jpg")
     f1.close()
         
     #run through each dir
@@ -26,7 +24,5 @@ for top_dir in top_dirs:
      #   
      #   #classify each image
      #   for dist_file in distorted_imgs:
-     #       dist = cv2.imread(dist_file)
-     #       #dist_size = cv2.resize(dist, (256, 256))
-     #       alexnet.predict(dist_file, dist, f2, "png")
+     #       alexnet.predict(dist_file, f2, "png")
      #   f2.close()
