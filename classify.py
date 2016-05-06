@@ -16,10 +16,10 @@ import caffe
 def predict(input_file, output_file):
     pycaffe_dir = "/home/cos326/caffe/python/"
 
-    model_def = "/home/cos326/COS435_Project/alex_net/deploy.prototxt"
-    pretrained_model = "/home/cos326/COS435_Project/alex_net/bvlc_alexnet.caffemodel"
-    #model_def = "/home/cos326/COS435_Project/google_net/deploy.prototxt"
-    #pretrained_model = "/home/cos326/COS435_Project/google_net/bvlc_googlenet.caffemodel"
+    #model_def = "/home/cos326/COS435_Project/alex_net/deploy.prototxt"
+    #pretrained_model = "/home/cos326/COS435_Project/alex_net/bvlc_alexnet.caffemodel"
+    model_def = "/home/cos326/COS435_Project/google_net/deploy.prototxt"
+    pretrained_model = "/home/cos326/COS435_Project/google_net/bvlc_googlenet.caffemodel"
     
     mean = np.load("/home/cos326/caffe/python/caffe/imagenet/ilsvrc_2012_mean.npy")
     labels = np.loadtxt("/home/cos326/caffe/data/ilsvrc12/synset_words.txt", str, delimiter='\t')
