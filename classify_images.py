@@ -18,11 +18,11 @@ for top_dir in top_dirs:
     f1.close()
         
     #run through each dir
-    #for a_dir in dirs:
-     #   distorted_imgs = glob.glob(a_dir + "*.png")
-     #   f2 = open(a_dir + 'classification.txt', 'w')
-     #   
-     #   #classify each image
-     #   for dist_file in distorted_imgs:
-     #       alexnet.predict(dist_file, f2, "png")
-     #   f2.close()
+    for a_dir in dirs:
+        distorted_imgs = glob.glob(a_dir + "*.png")
+        f2 = open(a_dir + 'classification.txt', 'w')
+        
+        #classify each image
+        for dist_file in distorted_imgs:
+            alexnet.predict(dist_file, f2, "png")
+        f2.close()
