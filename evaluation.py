@@ -4,14 +4,12 @@ import math
 import os
 
 
-os.chdir('/Users/samhita/Documents/0Princeton/1_SophomoreYear/COS435/FinalProject')
+os.chdir('/Users/samhita/Documents/0Princeton/1_SophomoreYear/COS435/FinalProject/Results/Places/Yard/')
 
-test = pandas.read_csv('test.csv', header=None)
-
-print test
+test = pandas.read_csv('503627556_0e3b3b1498_w3_results.csv', header=None)
 
 pool_size = 35
-pool_relDocs = 14
+pool_relDocs = 22
 
 
 # precision
@@ -33,11 +31,15 @@ print 'Recall: ', recall
 
 
 # reciprocal rank
+rank = 0;
 for i in range(0, len(test)):
 	if test.iloc[i, 0] != 0:
 		rank = i+1
 		break;
-recip_rank = 1/(float)(rank)
+if rank == 0:
+	recip_rank = 0;
+else:
+	recip_rank = 1/(float)(rank)
 print 'Reciprocal rank: ', recip_rank
 
 
