@@ -1,4 +1,5 @@
 *~
 *pyc
 *#
-google_net/bvlc_googlenet.caffemodel
+google_net/*
+alex_net/*
